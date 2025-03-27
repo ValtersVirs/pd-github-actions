@@ -1,0 +1,13 @@
+name: "Test Python Greetings app"
+description: "Composite action to test Python Greetings app"
+inputs:
+  environment:
+    description: "Environment where to execute tests"
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v4
+    - name: Print step name
+      run: echo "Testing on ${{ inputs.environment }} has started.."
+      shell: cmd

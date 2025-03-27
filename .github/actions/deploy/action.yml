@@ -1,0 +1,17 @@
+name: "Deploy Python Greetings app"
+description: "Composite action to deploy Python Greetings app"
+inputs:
+inputs:
+  environment:
+    description: "Environment where to deploy Python Greetings app"
+    required: true
+  port:
+    description: "Port for Python Greetings app"
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v4
+    - name: Print step name
+      run: echo "Deployment to ${{ inputs.environment }} on port ${{ inputs.port }} has started.."
+      shell: cmd
