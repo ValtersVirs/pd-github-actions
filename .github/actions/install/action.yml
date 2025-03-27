@@ -10,10 +10,11 @@ runs:
       with:
         repository: mtararujs/python-greetings
         path: python-greetings
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: 'pip'
     - name: Install dependencies
       working-directory: python-greetings
-      run: |
-        python3 -m venv venv
-        source venv/bin/activate
-        pip install -r requirements.txt
+      run: pip install -r requirements.txt
       shell: bash

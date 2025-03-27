@@ -17,13 +17,15 @@ runs:
       with:
         repository: mtararujs/python-greetings
         path: python-greetings
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: 'pip'
     - name: Delete existing pm2 service
       working-directory: python-greetings
       run: pm2 delete greetings-app-${{ inputs.environment }} || true
       shell: bash
     - name: Run pm2 service
       working-directory: python-greetings
-      run: |
-        source venv/bin/activate
-        pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
+      run: pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
       shell: bash
