@@ -1,16 +1,16 @@
 name: "Install dependencies"
-description: "Composite action to install dependecies"
+description: "Composite action to install dependencies"
 runs:
   using: composite
   steps:
     - name: Print step name
       run: echo "Installing dependencies has started.."
       shell: cmd
-    - name: Install dependencies
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
       with:
         repository: mtararujs/python-greetings
         path: python-greetings
+    - name: Install dependencies
       working-directory: python-greetings
       run: pip install -r requirements.txt
       shell: cmd
