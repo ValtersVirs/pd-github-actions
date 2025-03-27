@@ -1,7 +1,6 @@
 name: "Deploy Python Greetings app"
 description: "Composite action to deploy Python Greetings app"
 inputs:
-inputs:
   environment:
     description: "Environment where to deploy Python Greetings app"
     required: true
