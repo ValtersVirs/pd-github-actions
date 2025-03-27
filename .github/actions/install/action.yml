@@ -13,6 +13,7 @@ runs:
     - name: Install dependencies
       working-directory: python-greetings
       run: |
+        python3 -m venv venv
         source venv/bin/activate
         pip install -r requirements.txt
       shell: bash
