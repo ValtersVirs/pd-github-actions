@@ -3,7 +3,6 @@ description: "Composite action to install dependecies"
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v4
     - name: Print step name
       run: echo "Installing dependencies has started.."
       shell: cmd
