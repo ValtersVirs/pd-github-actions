@@ -10,3 +10,15 @@ runs:
     - name: Print step name
       run: echo "Testing on ${{ inputs.environment }} has started.."
       shell: bash
+    - uses: actions/checkout@v4
+      with:
+        repository: mtararujs/course-js-api-framework
+        path: course-js-api-framework
+    - name: Installing test dependencies
+      working-directory: course-js-api-framework
+      run: npm install
+      shell: bash
+    - name: Run test
+      working-directory: course-js-api-framework
+      run: npm run greetings greetings_${{ inputs.environment }}
+      shell: bash
