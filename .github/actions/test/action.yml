@@ -9,4 +9,4 @@ runs:
   steps:
     - name: Print step name
       run: echo "Testing on ${{ inputs.environment }} has started.."
-      shell: cmd
+      shell: bash

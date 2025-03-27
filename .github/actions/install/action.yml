@@ -5,12 +5,12 @@ runs:
   steps:
     - name: Print step name
       run: echo "Installing dependencies has started.."
-      shell: cmd
+      shell: bash
     - uses: actions/checkout@v4
       with:
-        repository: ValtersVirs/python-greetings
+        repository: mtararujs/python-greetings
         path: python-greetings
     - name: Install dependencies
       working-directory: python-greetings
       run: pip install -r requirements.txt
-      shell: cmd
+      shell: bash
