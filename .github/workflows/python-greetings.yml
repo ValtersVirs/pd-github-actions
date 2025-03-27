@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/deploy
         with:
-          environment: "staging"
+          environment: "stg"
           port: "7002"
   tests-on-staging:
     runs-on: self-hosted
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/test
         with:
-          environment: "staging"
+          environment: "stg"
   deploy-to-preprod:
     runs-on: self-hosted
     needs: [tests-on-staging]
