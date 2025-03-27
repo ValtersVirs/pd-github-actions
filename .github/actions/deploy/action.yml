@@ -13,3 +13,15 @@ runs:
     - name: Print step name
       run: echo "Deployment to ${{ inputs.environment }} on port ${{ inputs.port }} has started.."
       shell: cmd
+    - uses: actions/checkout@v4
+      with:
+        repository: mtararujs/python-greetings
+        path: python-greetings
+    - name: Delete existing pm2 service
+      working-directory: python-greetings
+      run: pm2 delete greetings-app-${{ inputs.environment }} & set "errorlevel=0"
+      shell: cmd
+    - name: Run pm2 service
+      working-directory: python-greetings
+      run: pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
+      shell: cmd
