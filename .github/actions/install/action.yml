@@ -8,7 +8,7 @@ runs:
       shell: cmd
     - uses: actions/checkout@v4
       with:
-        repository: mtararujs/python-greetings
+        repository: ValtersVirs/python-greetings
         path: python-greetings
     - name: Install dependencies
       working-directory: python-greetings
